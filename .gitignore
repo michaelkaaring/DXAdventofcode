@@ -1,1 +1,8 @@
 .DS_Store
+/Erik/Elixir/_build
+/Erik/Elixir/cover
+/Erik/Elixir/deps
+/Erik/Elixir/doc
+/Erik/Elixir/erl_crash.dump
+*.ez
+*.beam
