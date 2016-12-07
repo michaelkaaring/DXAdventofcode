@@ -1,19 +1,10 @@
 defmodule Aoc16.Day02 do
 
   def run do
-    part_1 = File.open! "inputs/02_input.txt", fn(pid) ->
-      IO.read(pid, :all)
-      |> String.trim
-      |> process_text(false)
-    end
+    input = File.read!("inputs/02_input.txt")
+    |> String.trim
 
-    part_2 = File.open! "inputs/02_input.txt", fn(pid) ->
-      IO.read(pid, :all)
-      |> String.trim
-      |> process_text(true)
-    end
-
-    {part_1, part_2}
+    {process_text(input, false), process_text(input, true)}
   end
 
   def process_text(text, alphanumerical) do
