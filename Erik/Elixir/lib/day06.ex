@@ -30,9 +30,9 @@ defmodule Aoc16.Day06 do
     |> process_data(accumulator)
   end
 
-  def process_data(keys, data, highest_word \\ "", lowest_word \\ "")
+  defp process_data(keys, data, highest_word \\ "", lowest_word \\ "")
 
-  def process_data([h | t], data, highest_word, lowest_word) do
+  defp process_data([h | t], data, highest_word, lowest_word) do
     sorted =
       Map.get(data, h)
       |> Enum.sort(fn({_x, y}, {_a, b}) -> y > b end)
@@ -43,7 +43,7 @@ defmodule Aoc16.Day06 do
     process_data t, data, highest_word <> highest_letter, lowest_word <> lowest_letter
   end
 
-  def process_data([], _data, highest_word, lowest_word) do
+  defp process_data([], _data, highest_word, lowest_word) do
     {highest_word, lowest_word}
   end
 end
