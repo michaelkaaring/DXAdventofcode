@@ -6,3 +6,4 @@
 /Erik/Elixir/erl_crash.dump
 *.ez
 *.beam
+*.swp
