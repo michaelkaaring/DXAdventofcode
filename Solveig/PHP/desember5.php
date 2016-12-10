@@ -17,10 +17,17 @@ while(count($password) < 8)
 
 	if (checkHash($hash) > 0)
 	{
-		$password[] = substr($hash, 5, 1);
-		var_dump($password);
+		$pos = substr($hash, 5, 1);
+
+		if (is_numeric($pos) && (int)$pos < 8 && !array_key_exists($pos, $password)) {
+
+			$password[$pos] = substr($hash, 6, 1);
+
+		}
 	}
 	$inc++;
 }
 
+ksort($password);
+var_dump($password);
 echo implode('', $password);
